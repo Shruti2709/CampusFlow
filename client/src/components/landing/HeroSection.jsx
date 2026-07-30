@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Rocket, BarChart3, CheckCircle2, Clock, Send } from "lucide-react";
+import { Rocket, LayoutGrid, CheckCircle2, MessageSquareWarning, Search, CalendarDays } from "lucide-react";
 
 const feed = [
   { icon: CheckCircle2, text: "Ananya S. — offer accepted at Verttex Systems", tone: "text-emerald-400" },
-  { icon: Send, text: "NexaTech drive — 42 students applied", tone: "text-blue-400" },
-  { icon: Clock, text: "Interview round 2 scheduled — BluePeak Analytics", tone: "text-amber-400" },
+  { icon: MessageSquareWarning, text: "Hostel Wi-Fi complaint — marked resolved", tone: "text-amber-400" },
+  { icon: Search, text: "Lost ID card — matched & returned", tone: "text-blue-400" },
+  { icon: CalendarDays, text: "Hackathon 2.0 — 120 students registered", tone: "text-violet-400" },
 ];
 
 export default function HeroSection() {
@@ -24,35 +25,36 @@ export default function HeroSection() {
           transition={{ duration: 0.7 }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur px-4 py-1.5 text-sm text-slate-200">
-            <Rocket size={14} className="text-blue-400" />
-            The complete campus placement platform
+            <LayoutGrid size={14} className="text-blue-400" />
+            The all-in-one campus operating system
           </span>
 
           <h1 className="font-display mt-7 text-5xl md:text-6xl font-bold leading-[1.05] text-white tracking-tight">
-            From registration to
+            Placements, complaints,
             <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
-              final offer letter.
+              lost &amp; found, events.
             </span>
+            One platform.
           </h1>
 
           <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-lg">
-            CampusFlow connects students, recruiters, and placement cells on one
-            platform — resumes, drives, interviews, and offers, tracked in real time
-            instead of scattered across spreadsheets.
+            CampusFlow replaces notice boards, WhatsApp groups, Google Forms, and
+            spreadsheets with a single hub for students, recruiters, and admins —
+            covering recruitment, grievances, lost &amp; found, and campus events.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#features"
+            
+              href="#modules"
               className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold shadow-lg shadow-blue-900/40 hover:opacity-90 transition"
             >
-              Explore platform
+              Explore all modules
             </a>
-            <a
+            
               href="#process"
               className="px-7 py-3.5 rounded-xl border border-white/15 text-slate-100 font-medium hover:bg-white/5 transition flex items-center gap-2"
             >
-              <BarChart3 size={18} />
+              <Rocket size={18} />
               See how it works
             </a>
           </div>
@@ -67,18 +69,18 @@ export default function HeroSection() {
         >
           <div className="rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-2xl p-6 shadow-2xl shadow-black/40">
             <div className="flex items-center justify-between mb-5">
-              <p className="text-white font-display font-semibold">Placement Cell — Live</p>
+              <p className="text-white font-display font-semibold">Campus Feed — Live</p>
               <span className="flex items-center gap-1.5 text-xs text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Live
               </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 mb-5">
-              {[["94%", "Eligible"], ["61", "Applied"], ["18", "Selected"]].map(([n, l]) => (
+            <div className="grid grid-cols-4 gap-2 mb-5">
+              {[["18", "Placed"], ["7", "Complaints"], ["12", "Lost & Found"], ["5", "Events"]].map(([n, l]) => (
                 <div key={l} className="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
-                  <p className="text-white font-display font-bold text-xl">{n}</p>
-                  <p className="text-slate-400 text-xs mt-1">{l}</p>
+                  <p className="text-white font-display font-bold text-lg">{n}</p>
+                  <p className="text-slate-400 text-[11px] mt-1">{l}</p>
                 </div>
               ))}
             </div>
