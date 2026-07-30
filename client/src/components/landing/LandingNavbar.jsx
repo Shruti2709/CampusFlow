@@ -15,6 +15,7 @@ export default function LandingNavbar() {
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
+          <a href="#modules" className="hover:text-white transition">Modules</a>
           <a href="#features" className="hover:text-white transition">Features</a>
           <a href="#process" className="hover:text-white transition">How it works</a>
           <a href="#why" className="hover:text-white transition">Why CampusFlow</a>
