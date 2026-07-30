@@ -1,3 +1,5 @@
+console.log("CAMPUSFLOW SERVER LOADED");
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -115,15 +117,14 @@ app.use(
 );
 
 
-
+app.get("/", (req, res) => {
+  res.send("CampusFlow Backend is running");
+});
 
 
 const PORT = process.env.PORT || 5000;
 
-// Start the HTTP server right away. Register/login/etc. still need Mongo to
-// actually work, but the server itself should never go silent just because
-// the database hasn't connected yet - that's how "Login failed" /
-// "Registration failed" end up with no real explanation anywhere.
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
