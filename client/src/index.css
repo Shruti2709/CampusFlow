@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body{
+    background:#f8fafc;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.font-display{
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
