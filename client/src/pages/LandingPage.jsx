@@ -1,6 +1,7 @@
 import LandingNavbar from "../components/landing/LandingNavbar";
 import HeroSection from "../components/landing/HeroSection";
 import StatsSection from "../components/landing/StatsSection";
+import ModulesSection from "../components/landing/ModulesSection";
 import FeaturesSection from "../components/landing/FeaturesSection";
 import ProcessSection from "../components/landing/ProcessSection";
 import WhySection from "../components/landing/WhySection";
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <LandingNavbar />
       <HeroSection />
       <StatsSection />
+      <ModulesSection />
       <FeaturesSection />
       <ProcessSection />
       <WhySection />
