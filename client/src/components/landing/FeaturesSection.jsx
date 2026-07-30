@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {
   GraduationCap, Building2, CalendarDays, Briefcase, LineChart, FileText,
+  MessageSquareWarning, Search, Megaphone,
 } from "lucide-react";
 
 const features = [
@@ -25,14 +26,29 @@ const features = [
     desc: "Every round and outcome logged, from screening to final offer.",
   },
   {
-    icon: LineChart,
-    title: "Analytics dashboard",
-    desc: "Branch-wise placement stats and trends, visualized as they happen.",
+    icon: MessageSquareWarning,
+    title: "Complaint management",
+    desc: "Students raise hostel, facility, or academic complaints and track resolution.",
   },
   {
-    icon: FileText,
-    title: "Resume repository",
-    desc: "Centralized resumes with instant preview for recruiters.",
+    icon: Search,
+    title: "Lost & found",
+    desc: "Report lost items or post found ones — matched and resolved on campus.",
+  },
+  {
+    icon: CalendarDays,
+    title: "Campus events",
+    desc: "Workshops, hackathons, seminars, and fests in one shared calendar.",
+  },
+  {
+    icon: Megaphone,
+    title: "Smart notice board",
+    desc: "Announcements, placement updates, and alerts — no more WhatsApp digging.",
+  },
+  {
+    icon: LineChart,
+    title: "Analytics dashboard",
+    desc: "Placement stats, complaint trends, and event turnout, visualized live.",
   },
 ];
 
@@ -45,11 +61,11 @@ export default function FeaturesSection() {
             Platform
           </p>
           <h2 className="font-display mt-3 text-4xl font-bold text-white">
-            Everything a placement cell actually needs
+            Everything a campus actually needs
           </h2>
           <p className="mt-4 text-slate-400">
-            Built to replace the spreadsheet-and-email chaos of campus recruitment
-            with one connected system.
+            Built to replace the spreadsheet-notice-board-WhatsApp chaos of campus
+            life with one connected system — for placements and everything else.
           </p>
         </div>
 
