@@ -43,21 +43,22 @@ export default function HeroSection() {
             covering recruitment, grievances, lost &amp; found, and campus events.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            
-              href="#modules"
-              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold shadow-lg shadow-blue-900/40 hover:opacity-90 transition"
-            >
-              Explore all modules
-            </a>
-            
-              href="#process"
-              className="px-7 py-3.5 rounded-xl border border-white/15 text-slate-100 font-medium hover:bg-white/5 transition flex items-center gap-2"
-            >
-              <Rocket size={18} />
-              See how it works
-            </a>
-          </div>
+         <div className="mt-10 flex flex-wrap gap-4">
+  <a
+    href="#modules"
+    className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold shadow-lg shadow-blue-900/40 hover:opacity-90 transition"
+  >
+    Explore all modules
+  </a>
+
+  <a
+    href="#process"
+    className="px-7 py-3.5 rounded-xl border border-white/15 text-slate-100 font-medium hover:bg-white/5 transition flex items-center gap-2"
+  >
+    <Rocket size={18} />
+    See how it works
+  </a>
+</div>
         </motion.div>
 
         {/* live dashboard mockup */}
