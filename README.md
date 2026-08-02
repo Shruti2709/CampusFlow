@@ -1,128 +1,59 @@
-# CampusFlow
-
-CampusFlow is a campus placement management platform that connects students,
-recruiters, and placement cells on one system — from student registration and
-resume management through drives, interviews, and final offers.
-
-**Live demo:** _add your deployed link here_
-**Tech:** React (Vite) · Tailwind CSS · Framer Motion · Node.js · Express · MongoDB · JWT
-
----
+CampusFlow is a comprehensive campus management and placement platform built using the MERN stack. It streamlines the entire placement process while also providing essential campus services such as event management, complaint handling, Lost & Found, announcements, and student profile management. The platform offers dedicated dashboards for students and administrators, enabling efficient communication, recruitment, and campus engagement from a single application.
 
 ## Features
 
-**Student portal**
-- Register, log in, and maintain a profile (branch, CGPA, skills, resume)
-- Browse open placement drives and apply
-- Automatic eligibility check against a drive's CGPA/branch requirements
-- Track interview schedule and placement status
+### Student Portal
+- Secure student registration and login with JWT authentication
+- Create and manage personal profile (branch, CGPA, skills, resume)
+- Upload and update resumes
+- Browse placement drives and apply online
+- Automatic eligibility verification based on CGPA, branch, and drive criteria
+- Track application status, interview schedules, and final placement results
+- View campus announcements and upcoming events
+- Submit and track complaints to the placement cell or administration
+- Lost & Found portal to report or search for lost items
+- Personalized dashboard with placement statistics and recent activities
 
-**Admin / placement cell portal**
-- Dashboard with live counts (students, companies, drives, interviews, placed students)
-- Manage companies, students, placement drives, and interviews (create/list/delete)
-- Role-based access — only admins can create or remove companies/drives/interviews
+### Placement Cell / Admin Portal
+- Secure admin authentication with role-based access
+- Dashboard with real-time analytics
+  - Total students
+  - Companies
+  - Placement drives
+  - Interviews
+  - Selected students
+  - Active complaints
+  - Upcoming events
+- Create, edit, and manage placement drives
+- Manage registered students and their profiles
+- Manage recruiters and company information
+- Schedule interviews and update interview status
+- Review student applications
+- Manage campus events and announcements
+- View, resolve, and monitor complaints
+- Moderate Lost & Found posts
+- Monitor overall placement progress through analytics
 
-**Platform**
-- JWT authentication (Bearer token, with a cookie fallback)
-- Resume/logo uploads via Multer
-- Responsive, glassmorphism landing page
+### Placement Management
+- Company registration and management
+- Placement drive creation with eligibility criteria
+- Student application tracking
+- Interview scheduling
+- Offer status management
+- Placement statistics and reporting
 
-## Tech stack
+### Campus Services
+- Campus Events Management
+- Lost & Found Portal
+- Complaint Management System
+- Campus-wide announcements
+- Notification-ready architecture for future email and in-app alerts
 
-| Layer     | Stack |
-|-----------|-------|
-| Frontend  | React 19, Vite, Tailwind CSS v4, Framer Motion, Recharts, React Router, Axios, React Hot Toast |
-| Backend   | Node.js, Express, MongoDB + Mongoose, JWT, Multer, bcryptjs |
-
-## Project structure
-
-```
-CampusFlow/
-├── client/                # React + Vite frontend
-│   └── src/
-│       ├── components/    # UI components (landing/, dashboard/, student/, ...)
-│       ├── pages/          # Route-level pages
-│       ├── routes/         # AppRoutes, ProtectedRoute
-│       ├── services/       # Axios calls per resource
-│       └── context/        # Auth + dashboard context
-└── server/                # Express + MongoDB backend
-    ├── controllers/
-    ├── middleware/         # auth, role, upload
-    ├── models/
-    └── routes/
-```
-
-## Getting started
-
-### 1. Clone and install
-
-```bash
-git clone <your-repo-url>
-cd CampusFlow
-
-cd server && npm install
-cd ../client && npm install
-```
-
-### 2. Configure environment variables
-
-A working `server/.env` is already included, pointing at a local MongoDB
-instance so the project runs immediately:
-
-```
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/campusflow
-JWT_SECRET=campusflow_secret_key
-CLIENT_URL=http://localhost:5173
-```
-
-You just need MongoDB itself running locally. Two options:
-
-- **Install MongoDB Community Server** and start it - it listens on
-  `127.0.0.1:27017` by default, which is exactly what `MONGO_URI` above
-  expects. [Download here](https://www.mongodb.com/try/download/community).
-- **Or use MongoDB Atlas (cloud)** instead: create your *own* free cluster at
-  [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register), whitelist your
-  IP under Network Access, grab the connection string from the "Connect"
-  button, and paste it into `MONGO_URI` in `server/.env`. Never reuse someone
-  else's Atlas connection string - Atlas only accepts connections from IPs the
-  cluster owner has explicitly whitelisted, so it will fail for anyone else no
-  matter how correct the username/password are.
-
-If `MONGO_URI` is ever wrong or unreachable, the server will still start and
-log a clear `MongoDB connection failed` message instead of failing silently -
-check the terminal running `npm run dev` in `server/` if register/login ever
-stop working.
-
-### 3. Run locally
-
-```bash
-# terminal 1
-cd server && npm run dev
-
-# terminal 2
-cd client && npm run dev
-```
-
-The client runs on `http://localhost:5173`, the API on `http://localhost:5000`.
-
-## Deployment
-
-- **Frontend (Vercel):** import the repo, set the root directory to `client`, build
-  command `npm run build`, output directory `dist`.
-- **Backend (Render):** new Web Service, root directory `server`, build command
-  `npm install`, start command `npm start`. Add `MONGO_URI`, `JWT_SECRET`, and `PORT`
-  as environment variables in Render's dashboard.
-- Update the client's API base URL (in `src/api/axios.js`) and the server's CORS
-  origin (in `server.js`) to point at each other's deployed URLs.
-
-## Roadmap
-
-- Export students/reports to CSV
-- Dark mode
-- Email notifications on interview scheduling
-- Cloudinary for resume/logo storage in production
-
-## License
-
-Built as a final-year academic project.
+### Platform Features
+- JWT Authentication with protected routes
+- Role-Based Access Control (Student & Admin)
+- Resume and file uploads using Multer
+- RESTful API architecture
+- Responsive UI for desktop, tablet, and mobile
+- Modern glassmorphism landing page with smooth animations
+- Scalable MERN architecture
