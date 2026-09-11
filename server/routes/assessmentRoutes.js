@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Assessment = require("../models/Assessment");
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
+
 
 // Default initial assessments for campus placement practice
 const DEFAULT_ASSESSMENTS = [

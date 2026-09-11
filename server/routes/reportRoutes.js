@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const Student = require("../models/Student");
-const Drive = require("../models/Drive");
+const StudentProfile = require("../models/StudentProfile");
+const PlacementDrive = require("../models/PlacementDrive");
 const Company = require("../models/Company");
 const Interview = require("../models/Interview");
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
 
 // GET placement analytics summary & structured report
 router.get("/summary", authMiddleware, async (req, res) => {
   try {
-    const students = await Student.find();
-    const drives = await Drive.find().populate("company", "name package");
+    const students = await StudentProfile.find().populate("user", "name email");
+    const drives = await PlacementDrive.find().populate("company", "name package");
     const companies = await Company.find();
     const interviews = await Interview.find().populate("student", "name").populate("company", "name");
 
@@ -49,13 +49,15 @@ router.get("/summary", authMiddleware, async (req, res) => {
 // GET CSV export stream of all students and their placement records
 router.get("/export-csv", authMiddleware, async (req, res) => {
   try {
-    const students = await Student.find();
+    const students = await StudentProfile.find().populate("user", "name email");
 
     let csvContent = "Full Name,Email,Phone,Department/Branch,CGPA,Placement Status,Technical Skills\n";
 
     students.forEach((s) => {
+      const name = s.user?.name || s.name || "";
+      const email = s.user?.email || s.email || "";
       const skills = Array.isArray(s.skills) ? s.skills.join(" | ") : s.skills || "N/A";
-      const line = `"${s.name || ""}","${s.email || ""}","${s.phone || ""}","${s.branch || ""}","${s.cgpa || ""}","${s.placementStatus || "Eligible"}","${skills.replace(/"/g, '""')}"\n`;
+      const line = `"${name}","${email}","${s.phone || ""}","${s.branch || ""}","${s.cgpa || ""}","${s.placementStatus || "Eligible"}","${String(skills).replace(/"/g, '""')}"\n`;
       csvContent += line;
     });
 
@@ -68,3 +70,4 @@ router.get("/export-csv", authMiddleware, async (req, res) => {
 });
 
 module.exports = router;
+

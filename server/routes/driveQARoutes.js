@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const DriveQuestion = require("../models/DriveQuestion");
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
+
 
 // GET all questions for a specific drive
 router.get("/:driveId", authMiddleware, async (req, res) => {
