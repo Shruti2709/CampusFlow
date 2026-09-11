@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #faf6f0;
+    color: #2b2f3a;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #e9d5ff;
+    color: #581c87;
+  }
+}
+
+.font-display {
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+}
+
+.font-mono-code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Authentic Pastel Palette Utilities */
+.pastel-bg-cream {
+  background-color: #fcf8f2;
+}
+
+.pastel-bg-sage {
+  background-color: #edf6ef;
+}
+
+.pastel-bg-lavender {
+  background-color: #f4ecfb;
+}
+
+.pastel-bg-sky {
+  background-color: #e8f3fc;
+}
+
+.pastel-bg-peach {
+  background-color: #fef2e6;
+}
+
+.pastel-bg-blush {
+  background-color: #fdebee;
+}
+
+.pastel-bg-butter {
+  background-color: #fdf8e6;
+}
+
+/* Pastel Borders */
+.pastel-border-sage {
+  border-color: #cde6d3;
+}
+
+.pastel-border-lavender {
+  border-color: #e4d1f7;
+}
+
+.pastel-border-sky {
+  border-color: #c9e3f8;
+}
+
+.pastel-border-peach {
+  border-color: #fadbc0;
+}
+
+.pastel-border-blush {
+  border-color: #f7ced5;
+}
+
+.pastel-border-butter {
+  border-color: #fae8af;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3ece2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4c5b3;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b5a490;
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+
+# Environment variables — never commit real credentials
+.env
+.env.local
+
+# Uploaded files (resumes, logos) — user-generated, not source
+server/uploads/*
+!server/uploads/.gitkeep
+
+# OS / editor
+.DS_Store
+*.log
